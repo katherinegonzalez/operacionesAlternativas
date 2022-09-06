@@ -128,8 +128,27 @@ def multiplicacionRusa():
 # VALOR DE RETORNO & POSTCONDICIONES
 # ----------------------------------------------------------------------------------------
 
+def encontrarMaxCD (numeroMayor, numero1, numero2):
+    for i in range(numeroMayor):
+        divisor = numeroMayor - i
+        if (numero1 % divisor == 0 and numero2 % divisor == 0):
+            return divisor
+
 def maxCD():
-    print('máximo común divisor')
+    print('Máximo Común Divisor: ')
+    print('Ingrese dos números para calcular el máximo común divisor: ')
+    numero1 = numeroIngresado('Ingrese el primer número (debe ser un numero entero): ')
+    numero2 = numeroIngresado('Ingrese el segundo número (debe ser un numero entero): ')
+
+
+    if (numero1 > numero2):
+        numeroMayor = numero1
+    else:
+        numeroMayor = numero2
+
+    maximoComunDivisor = encontrarMaxCD(numeroMayor, numero1, numero2)
+
+    print('El máximo común divisor de ', numero1, ' y ', numero2, ' es: ', maximoComunDivisor)
 
 
 # ----------------------------------------------------------------------------------------
